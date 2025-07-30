@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afonso Loureiro - DevOps Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #ffffff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Typography Scale */
+        .name {
+            font-size: 36px;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 400;
+            color: #666666;
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+            margin-top: 48px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Contact Information */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 48px;
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-item a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #4a4a4a;
+            margin-bottom: 32px;
+        }
+
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px 48px;
+            margin-bottom: 32px;
+        }
+
+        .skill-category {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .skill-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-items {
+            font-size: 15px;
+            color: #4a4a4a;
+            line-height: 1.5;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 40px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .job-header {
+            margin-bottom: 16px;
+        }
+
+        .job-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .company-date {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .company {
+            font-size: 15px;
+            color: #666666;
+            font-weight: 400;
+        }
+
+        .date {
+            font-size: 14px;
+            color: #888888;
+            font-weight: 400;
+        }
+
+        .job-description {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job-description li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #4a4a4a;
+        }
+
+        .job-description li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+
+        .job-description li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 24px;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .education-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .institution {
+            font-size: 15px;
+            color: #666666;
+        }
+
+        .education-date {
+            font-size: 14px;
+            color: #888888;
+        }
+
+        /* Lists */
+        .simple-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .simple-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #4a4a4a;
+        }
+
+        .simple-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+
+        .simple-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Language emphasis */
+        .lang-level {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 40px 24px;
+            }
+
+            .name {
+                font-size: 28px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .company-date {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .education-details {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 32px 16px;
+            }
+
+            .section-title {
+                font-size: 18px;
+            }
+
+            .name {
+                font-size: 24px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                padding: 20px;
+                font-size: 12px;
+            }
+
+            .name {
+                font-size: 24px;
+            }
+
+            .section-title {
+                font-size: 16px;
+                margin-top: 24px;
+                margin-bottom: 16px;
+            }
+
+            .contact-info {
+                margin-bottom: 24px;
+            }
+
+            .experience-item {
+                margin-bottom: 20px;
+                padding-bottom: 16px;
+            }
+
+            .job-description li {
+                font-size: 12px;
+                margin-bottom: 8px;
+            }
+
+            .simple-list li {
+                font-size: 12px;
+                margin-bottom: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="name">Afonso Loureiro</h1>
+        <p class="title">DevOps Engineer</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>📍</span>
+                <span>Porto, Portugal</span>
+            </div>
+            <div class="contact-item">
+                <span>✉</span>
+                <a href="mailto:afonso.m.loureiro@gmail.com">afonso.m.loureiro@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <span>📞</span>
+                <span>+351 964964500</span>
+            </div>
+            <div class="contact-item">
+                <span>🔗</span>
+                <a href="https://www.linkedin.com/in/afonso-loureiro-906295253/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h2 class="section-title">Summary</h2>
+        <p class="summary">
+            DevOps Engineer with 3+ years of experience developing and automating infrastructure using mainly AWS, Docker, and Kubernetes. Skilled in CI/CD (GitLab CI), Infrastructure as Code (Terraform), and application monitoring solutions (Grafana, Prometheus, Loki, Otel). Proven ability to improve deployment solutions and increase system reliability through automation and monitoring.
+        </p>
+    </section>
+
+    <section>
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <div class="skill-name">Languages</div>
+                <div class="skill-items">Python, Bash</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-name">DevOps Tools</div>
+                <div class="skill-items">Docker, Kubernetes, GitLab CI</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-name">Cloud Platforms</div>
+                <div class="skill-items">AWS (EKS, S3, EC2, ECS)<br>Azure (App Services)</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-name">Infrastructure as Code</div>
+                <div class="skill-items">Terraform, Ansible<br>Custom deployment tools</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-name">Monitoring & Observability</div>
+                <div class="skill-items">Prometheus, Grafana, CAdvisor<br>Loki, OpenTelemetry, Custom bots</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-name">Other Technologies</div>
+                <div class="skill-items">Git, Linux, Documentation, Networks</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Experience</h2>
+        
+        <div class="experience-item">
+            <div class="job-header">
+                <div class="job-title">DevOps Engineer</div>
+                <div class="company-date">
+                    <div class="company">LoschDigitalLab, Porto</div>
+                    <div class="date">Jul 2024 – Present</div>
+                </div>
+            </div>
+            <ul class="job-description">
+                <li>Responsible for a major monitoring overhaul across all applications, everything automated and applying best practices.</li>
+                <li>Improved multiple recurring processes and reduced cloud infrastructure cost by 20%.</li>
+                <li>Built and improved GitLab CI/CD pipelines.</li>
+                <li>Migrated some workloads to AWS EKS.</li>
+                <li>Automated infrastructure using Terraform and Ansible, maintaining environments in code, both for AWS and Azure.</li>
+                <li>Maintained legacy infra on OVH and nomad, running critical applications.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-header">
+                <div class="job-title">Cloud Trainee (DevOps | Cloud Automation)</div>
+                <div class="company-date">
+                    <div class="company">ITCenter, Lisbon</div>
+                    <div class="date">Jul 2022 – Dec 2023</div>
+                </div>
+            </div>
+            <ul class="job-description">
+                <li>Designing, implementing and testing automated solutions for private cloud-based infrastructures, such as scripts, playbooks, jobs and services (such as AWX or ansible tower).</li>
+                <li>Monitoring performance, diagnosing errors, troubleshooting issues and making necessary changes to optimize the performance of the underlying systems.</li>
+                <li>Maintaining and optimizing a private cloud environment (composed of Openstack, phpmyadmin, cisco UCS, etc).</li>
+                <li>Implementing and testing various development, automation tools, and IT infrastructure (Kubernetes cluster for example).</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Education</h2>
+        
+        <div class="education-item">
+            <div class="education-title">B.Sc. Mathematics</div>
+            <div class="education-details">
+                <div class="institution">UBI (Universidade da Beira Interior)</div>
+                <div class="education-date">2021-2022</div>
+            </div>
+        </div>
+
+        <div class="education-item">
+            <div class="education-title">B.Sc. Mathematics</div>
+            <div class="education-details">
+                <div class="institution">Applied to economy and management – UALG (Universidade do Algarve)</div>
+                <div class="education-date">2019-2021</div>
+            </div>
+        </div>
+
+        <div class="education-item">
+            <div class="education-title">Hackathon</div>
+            <div class="education-details">
+                <div class="institution">Untangle the Cloud Mercedes-Benz.io</div>
+                <div class="education-date">2023</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Certifications</h2>
+        <ul class="simple-list">
+            <li>AWS Certified Solutions Architect – Associate (2024)</li>
+            <li>Red Hat System Administration I (RH124) / Red Hat System Administration II (RH134) (2023)</li>
+            <li>Red Hat Delivery Specialist - Automation / Red Hat Delivery Specialist - Automation II (2022)</li>
+            <li>Cambridge English: Proficiency (CPE) (2018)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="section-title">Languages</h2>
+        <ul class="simple-list">
+            <li><span class="lang-level">English</span> – Fluent</li>
+            <li><span class="lang-level">Portuguese</span> – Native</li>
+            <li><span class="lang-level">French</span> – Basic</li>
+        </ul>
+    </section>
+</body>
+</html>
